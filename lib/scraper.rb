@@ -5,6 +5,8 @@ require 'csv'
 
 #Scraper class
 class Scraper
+
+  attr_reader :url, :gadgets, :page
   def initialize 
   @url = 'https://www.jumia.com.ng/smartphones/'
   @gadgets = Array.new
