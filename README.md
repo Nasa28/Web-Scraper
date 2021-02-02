@@ -14,6 +14,11 @@ This is a scraper for all smartphone pages of Jumia website. The scraper is capa
 - Rspec 3.10
 - Rubocop 1.6.1
 
+## Demo Video
+
+[Application Demo Link](https://www.loom.com/share/b6945d46f2cd47b1b56e53acbf17db09)
+
+
 ## Getting Started
 
 Follow these simple steps to get started:
