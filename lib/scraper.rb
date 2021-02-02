@@ -37,7 +37,7 @@ class Scraper
           discount_price = item.css('div.old').text
           rating = item.css('div.rev').text
           @gadgets.push(name.blue, price.green, discount_price.yellow, rating.red)
-          csv << [name, price, discount_price, rating].compact
+          csv << [name, price, discount_price, rating]
         end
           @page += 1
           puts @gadgets
