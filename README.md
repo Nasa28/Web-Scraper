@@ -1,7 +1,7 @@
 # JUMIA SmartPhones page
 This is a scraper for all smartphone pages of Jumia website. The scraper is capable of scraping the 50 pages, extract all the needed information and export them neatly as a csv file.
 
-![screenshot](../assets/images/output-terminal.png)
+![screenshot](./assets/images/output-terminal.png)
 
 ## Built With
 
@@ -31,7 +31,7 @@ To get a local copy of this repository enter the following command in you termin
 git clone https://github.com/Nasa28/Web-Scraper.git
 ```
  Open the the folder using any text editor of your choice.
- 
+
 ### Installations
 There are some important 'Gems' neccessary for easy running of this code.
 
