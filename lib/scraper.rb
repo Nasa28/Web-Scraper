@@ -15,15 +15,14 @@ class Scraper
 
   private
 
-  def url_data(url)
+  def url_data(_page)
+    url = if @page.nil?
+            @url
+          else
+            "https://www.jumia.com.ng/smartphones/?page=#{@page}#catalog-listing"
+          end
     doc = HTTParty.get(url)
     Nokogiri::HTML(doc.body)
-  end
-
-  def new_url_data(_url)
-    new_url = "https://www.jumia.com.ng/smartphones/?page=#{@page}#catalog-listing"
-    new_doc = HTTParty.get(new_url)
-    Nokogiri::HTML(new_doc.body)
   end
 
   public
@@ -33,7 +32,7 @@ class Scraper
     file.css('div.info')
     CSV.open('file.csv', 'wb') do |csv|
       while @page <= 40
-        new_file = new_url_data(@new_url)
+        new_file = url_data(@new_url)
         new_items = new_file.css('div.info')
         new_items.each do |item|
           name = item.css('h3.name').text
