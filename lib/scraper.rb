@@ -5,14 +5,14 @@ require 'csv'
 
 # Scraper class
 class Scraper
-  attr_reader :url, :gadgets, :page
+  attr_accessor :url, :gadgets, :page
 
   def initialize
     @url = 'https://www.jumia.com.ng/smartphones/'
     @gadgets = []
     @page = 1
   end
-
+   
   def url_data(url)
     doc = HTTParty.get(url)
     Nokogiri::HTML(doc.body)
@@ -24,6 +24,7 @@ class Scraper
     Nokogiri::HTML(new_doc.body)
   end
 
+  public
   def scraper
     file = url_data(@url)
     file.css('div.info')
@@ -40,7 +41,7 @@ class Scraper
           csv << [name, price, discount_price, rating]
         end
         @page += 1
-        puts @gadgets
+       @gadgets
 
       end
     end
