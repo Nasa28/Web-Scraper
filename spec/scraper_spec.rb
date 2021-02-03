@@ -8,9 +8,9 @@ describe Scraper do
       expect(scrape.url).to be_a(String)
     end
 
-      it 'sets the url' do
-        expect(scrape.url).not_to be Numeric
-      end
+    it 'sets the url' do
+      expect(scrape.url).not_to be Numeric
+    end
 
     it 'sets gadgets to an empty array' do
       expect(scrape.gadgets.empty?).to eq(true)

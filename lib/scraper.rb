@@ -12,7 +12,9 @@ class Scraper
     @gadgets = []
     @page = 1
   end
-   
+
+  private
+
   def url_data(url)
     doc = HTTParty.get(url)
     Nokogiri::HTML(doc.body)
@@ -25,6 +27,7 @@ class Scraper
   end
 
   public
+
   def scraper
     file = url_data(@url)
     file.css('div.info')
@@ -41,7 +44,7 @@ class Scraper
           csv << [name, price, discount_price, rating]
         end
         @page += 1
-       @gadgets
+        puts @gadgets
 
       end
     end
